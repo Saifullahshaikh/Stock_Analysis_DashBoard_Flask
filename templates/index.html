@@ -1,0 +1,35 @@
+<h1>Welcome to Stock Analysis DashBoard</h1>
+<form id="myForm" action="/get_plot" method="post">
+    Stock Key: <input type="text" name="Stock_Key" required placeholder="APPL"/>
+    <br>
+    Purchase Price: <input type="number" name="Purchase_price" required placeholder="USD"/>
+    <br>
+    Sale Price 1: <input type="number" name="Sale_price_1" required placeholder="USD"/>
+    <br>
+    Sale Price 2: <input type="number" name="Sale_price_2" required placeholder="USD"/>
+    <br>
+    <input type="submit" value = "Plot"/>
+    <input type="button" onclick="reset()" value = "Reset"/>
+</form>
+
+<script>
+    function reset(){
+        document.getElementById("myForm").reset();
+    }
+</script>
+
+{% if plot_url1 %}
+    <img src = {{plot_url1}} alt="Chart not displayed">
+{% endif %}
+{% if plot_url2 %}
+    <img src = {{plot_url2}} alt="Chart not displayed">
+{% endif %}
+{% if plot_url3 %}
+    <img src = {{plot_url3}} alt="Chart not displayed">
+{% endif %}
+{% if plot_url4 %}
+    <img src = {{plot_url4}} alt="Chart not displayed">
+{% endif %}
+{% if plot_url5 %}
+    <img src = {{plot_url5}} alt="Chart not displayed">
+{% endif %}
